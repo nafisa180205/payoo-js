@@ -36,15 +36,18 @@
                   <!-- user action button -->
 
                   <div class="pb-4">
-                    <button class="btn btn-lg">Add Money</button>
-                    <button class="btn btn-lg">Cash Out</button>
+                    <button id="btn-show-add-money" class="btn btn-lg">Add Money</button>
+                    <button id="btn-show-cash-out" class="btn btn-lg">Cash Out</button>
+                    <button id="btn-transection" class="btn btn-lg">Transection</button>
                   </div>
 
 
-                  <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                 <!-- add money section starts  -->
+                 <div id="add-money-form" class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl  ">
+                    
                     <form class="card-body">
 
-
+                        <h3>Add money form</h3>
                       <div class="form-control"> 
                         <label class="label">
                           <span class="label-text">Amount</span>
@@ -67,6 +70,56 @@
 
                     </form>
                   </div>
+                 <!-- add money section ends -->
+
+                 <!-- cash out section starts  -->
+                 <div id="cash-out-form" class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl hidden">
+
+                    
+                    <form class="card-body">
+
+                        <h3>Cash out form</h3>
+
+                      <div class="form-control"> 
+                        <label class="label">
+                          <span class="label-text">Amount</span>
+                        </label>
+                        <input id="input-cash-out" type="text" placeholder="Enter Amount" class="input input-bordered" autocomplete="off" required />
+                      </div>
+
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">PIN</span>
+                        </label>
+                        <input id="input-cash-out-pin" type="password" placeholder="Enter PIN" class="input input-bordered" required />
+                      </div>
+
+
+                      <div class="form-control mt-6">
+                        <button id="btn-cash-out" class="btn btn-primary"> Cash Out</button>
+                      </div>
+
+
+                    </form>
+                  </div>
+                 <!-- cash out section ends  -->
+
+
+                 <!-- add money section starts  -->
+                 <div id="transection-form" class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl hidden ">
+                    
+                  <div class="card-body">
+
+                      <h3>transection</h3>
+
+                      <div id="transection-container">
+                        
+                      </div>
+
+
+                  </div>
+                </div>
+               <!-- add money section ends -->
 
                 
               </div>
@@ -75,38 +128,10 @@
     </main>
 
 
-    <script >
-        
-    document.getElementById('btn-add-money').addEventListener('click' , function(event){
-        event.preventDefault()
-        console.log('clicked')
-
-        const addMoneyInput = document.getElementById('input-add-money').value
-        console.log(addMoneyInput)
-
-        const addPinNumberInput = document.getElementById('input-pin-number').value
-        
-        if(addPinNumberInput === '1234'){
-            console.log('thik ase')
-
-            const balance = document.getElementById('current-amount').innerText
-
-            const balanceNumber = parseFloat(balance)
-            const addMoneyNumber = parseFloat(addMoneyInput)
-
-            const newBalance = balanceNumber  + addMoneyNumber 
-
-            document.getElementById('current-amount').innerHTML = newBalance
-        
-        }
-
-        else{
-            alert('Incorrect pin number')
-        }
-
-
-    })
-    </script>
+    <script src="./js/utilities.js"></script>
+    <script src="./js/addMoney.js"></script>
+    <script src="./js/cashOut.js"></script>
+    <script src="./js/features.js"></script>
     
 </body>
 </html>
