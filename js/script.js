@@ -15,7 +15,7 @@ document.getElementById('btn-login').addEventListener('click' , function(event){
     // step - 4 validate data
     if(phoneNumber === '5' && pinNumber === '1234'){
         console.log('you are logged in')
-        window.location.href = '/home.html'
+        window.location.href = './home.html'
     }
     else{
         alert('please input correct number')
